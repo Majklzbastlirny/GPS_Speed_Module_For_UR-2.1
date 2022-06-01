@@ -13,13 +13,12 @@ const int GPSBaud = 115200;
 TinyGPSPlus gps;
 
 //Software serial
-const int RX = 4, TX = 5;
+const int RX = 4, TX = 0; //esp12 tx=5
 SoftwareSerial ss(RX, TX);
 
 
 //Output
 #define Out1 2
-#define Debug 13
 #define DutyCycle 128 //range 0-255
 
 //Remaining
@@ -83,12 +82,6 @@ void loop() {
   last = millis();
 }
 
-
-
-
-void Loading() {
-
-}
 
 
 //200 km/h  = 2380HZ
